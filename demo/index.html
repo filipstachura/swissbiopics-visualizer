@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SwissBioPics reaction visualizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/@webcomponents/custom-elements"></script>
+    <script type="module" src="../swissbiopics.js"></script>
+</head>
+
+<body>
+    <div class="webPage">
+        <template id="sibSwissBioPicsStyle">
+          <style>
+            ul>li>a {
+              font-style: oblique;
+            }
+            ul.notpresent {
+              display: none;
+            }
+          </style>
+        </template>
+        <template id="sibSwissBioPicsSlLiItem">
+          <li class="subcellular_location">
+            <a class="subcell_name"></a>
+            <span class="subcell_description"></span>
+          </li>
+        </template>
+        <h1>Using SwissBioPics in your own site</h1>
+        <p>
+            Using SwissBioPics requires two templates. One for styling and one for how the side bar is supposed to render.
+            <pre>
+      &lt;template id="sibSwissBioPicsStyle"&gt;
+       &lt;style&gt;
+	ul > li > a {
+	  font-style:oblique;
+	}
+	ul.notpresent {
+	  display:none;
+	}
+      &lt;/style&gt;
+    &lt;/template&gt;
+    &lt;template id="sibSwissBioPicsSlLiItem"&gt;
+      &lt;li class="subcellular_location"&gt;
+	&lt;a class="subcell_name"&gt;&lt;/a&gt; &lt;-- the class name is required and textContent will be set on it
+	&lt;span class="subcell_description"&gt;&lt;/span&gt; &lt;-- the class name is required and textContent will be set on it
+      &lt;/li&gt;
+    &lt;/template&gt;
+    </pre> Then use
+            <pre>&lt;sib-swissbiopics-sl taxid="A NCBI taxid" sls="Comma seperated list of SubcellularLocation identifiers"&gt;&lt;/sib-swissbiopics-sl&gt;</pre> Make sure to import the module via node or use the latest via www.swissbiopics.org
+            <pre>
+        &lt;script type="module" src="https://www.swissbiopics.org/static/swissbiopics.js"&gt;&lt;/script&gt;
+        &lt;script defer&gt;
+            if (! window.customElements.get("sib-swissbiopics-sl"))
+            window.customElements.define("sib-swissbiopics-sl", SwissBioPicsSL);
+        &lt;/script&gt;
+    </pre>
+        </p>
+
+        <h1>Example pictures</h1>
+        <ul>
+            <li><a href="#ecoli">Example e-coli</a></li>
+            <li><a href="#baker">Example Baker's yeast</a></li>
+            <li><a href="#fission">Example Fission yeast</a></li>
+            <li><a href="#human-neuron">Example human neuron</a></li>
+            <li><a href="#human-muscle">Example human muscle</a></li>
+            <li><a href="#human-epithelial">Example human epithelial</a></li>
+            <li><a href="#human-basic">Example human basic</a></li>
+            <li><a href="#fungus">Example fungus</a></li>
+            <li><a href="#mollicutes">Example Mollicutes</a></li>
+            <li><a href="#archea">Example Archea</a></li>
+            <li><a href="#apicomplexa">Example Apicomplexa</a></li>
+            <li><a href="#viridiplantae">Example plant<a></li>
+            <li><a href="#eukaryota">Example eukaryota<a></li>
+            <li><a href="#chlamydomona">Example chlamydomona</a></li>
+            <li><a href="#nointeractive">Example hidden interactivity</a></li>
+            <li><a href="#morego">Example of different GO terms</a></li>
+        </ul>
+
+
+        <h2 id="ecoli">Example e-coli</h2>
+        <sib-swissbiopics-sl taxid="83333" sls="491,365"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="83333" sls="491,365"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="baker">Example Baker's yeast</h2>
+        <sib-swissbiopics-sl taxid="559292" sls="188"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="559292" sls="188"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="fission">Example Fission yeast</h2>
+        <sib-swissbiopics-sl taxid="284812" sls="188"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="284812" sls="188"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="human-neuron">Example human neuron</h2>
+        <sib-swissbiopics-sl taxid="9606" sls="176"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="9606" sls="176"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="human-muscle">Example human muscle</h2>
+        <sib-swissbiopics-sl taxid="9606" sls="312"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="9606" sls="312"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="human-epithelial">Example human epithelial</h2>
+        <sib-swissbiopics-sl taxid="9606" sls="92"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="9606" sls="92"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="human-basic">Example human basic</h2>
+        <sib-swissbiopics-sl taxid="9606" sls="86"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="9606" sls="86"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="fungus">Example fungus</h2>
+        <sib-swissbiopics-sl taxid="321614" sls="86"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="321614" sls="86"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+
+        <h2 id="mollicutes">Example Mollicutes</h2>
+        <sib-swissbiopics-sl taxid="505682" sls="86"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="505682" sls="86"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="archea">Example Archea</h2>
+        <sib-swissbiopics-sl taxid="272844" sls="86"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="272844" sls="86"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="apicomplexa">Example Apicomplexa</h2>
+
+        <sib-swissbiopics-sl taxid="5838" sls="86"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="5838" sls="86"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="viridiplantae">Example plant</h2>
+
+        <sib-swissbiopics-sl taxid="3888" sls="86"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="3888" sls="86"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="eukaryota">Example eukaryota</h2>
+
+        <sib-swissbiopics-sl taxid="2759" sls="86"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="2759" sls="86"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="chlamydomona">Example Chlamydomona</h2>
+
+        <sib-swissbiopics-sl taxid="3042" sls="86"></sib-swissbiopics-sl>
+        <pre>&lt;sib-swissbiopics-sl taxid="3042" sls="86"&gt;&lt;/sib-swissbiopics-sl&gt;</pre>
+
+        <h2 id="none">Example where no locations are found</h2>
+
+        <sib-swissbiopics-sl taxid="3042" sls="99"></sib-swissbiopics-sl>
+        <h2 id="nointeractive">Example of no interactity</h2>
+        By setting the attribute styleid, we can override the inbuild interactive coloring
+        <pre>
+        &lt;template id="noInteractiveStyle"&gt;
+            &lt;style&gt;
+            svg text {
+                fill:unset;
+                display:none;
+            }
+            &lt;/style&gt;
+        &lt;/template&gt;
+        </pre>
+
+        <template id="noInteractiveStyle">
+            <style>
+            .lookedAt {
+                display:none;
+                fill:none;
+                stroke:black;
+            }
+            </style>
+        </template>
+        <sib-swissbiopics-sl taxid="3042" sls="82" styleid="noInteractiveStyle"></sib-swissbiopics-sl>
+        <h2 id="morego">Example of another set of GO term ids</h2>
+        <sib-swissbiopics-sl taxid="83333" gos="5829,32993" styleid="noInteractiveStyle"></sib-swissbiopics-sl>
+    </div>
+</body>
+
+</html>
